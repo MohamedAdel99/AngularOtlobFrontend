@@ -1,0 +1,23 @@
+.bsbabs {
+    background-image: url("332.jpg");
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100vmax;
+}
+.search-fr
+{
+    background-color: rgba(255, 255, 255, 0.28);
+}
+.search-fr .fonto
+{
+    font-size: 24px;
+}
+.sizeo
+{
+    font-size: 20px;
+    font-weight: 500;
+    color: #632a7b;
+    vertical-align: middle;
+}

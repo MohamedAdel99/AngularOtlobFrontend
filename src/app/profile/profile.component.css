@@ -1,0 +1,12 @@
+body {
+    display: -ms-flexbox;
+    -ms-flex-align: center;
+    align-items: center;
+    outline: none;
+    box-shadow: 0 2px 4px #6b6b6b;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    padding-right: 10px;
+    background-color: #ffffff;
+  }
+  

@@ -1,0 +1,63 @@
+<div class="container">
+     <body>
+         
+    
+    <div class="row my-2">
+        <div class="col-lg-8 order-lg-2">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a  (click)='raise2()' data-target="#profile" data-toggle="tab" class="nav-link {{x}}">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a (click)='raise()' data-target="#edit" data-toggle="tab" class="nav-link {{s}}">Edit</a>                    
+                </li>
+            </ul>
+            <div class="tab-content py-4">
+                <div class="tab-pane active" id="profile" *ngIf="flag == 0">
+                    <h5 class="mb-3">{{username}} Profile</h5>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>About</h6>
+                            <p>
+                                phonenumber : {{user.phoneNum}}
+                            </p>
+                            <h6>Address</h6>
+                            <p>
+                                {{user.address}}
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <span class="badge badge-danger"><i class="fa fa-eye"></i> 22 Order</span>
+                        </div>
+                        <div class="col-md-12">
+                            <h5 class="mt-2"><span class="fa fa-clock-o ion-clock float-right"></span> Recent Orders</h5>
+                            <table class="table table-sm table-hover table-striped" *ngFor="let order in orders">
+                                <tbody>                                    
+                                    <tr>
+                                        <td>
+                                            <strong>order - {{order.oid}} from {{order.rest.name}} Price : {{order.totalAmount}} </strong>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--/row-->
+                </div>
+            </div>
+            <div class="tab-pane" id="edit" *ngIf="flag > 0">
+                <app-profile-edit></app-profile-edit>
+            </div>
+        </div>
+        <div class="pic col-lg-4 order-lg-1 text-center">
+            <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+            <h6 class="mt-2">Upload a different photo</h6>
+            <label class="custom-file">
+                <input type="file" id="file" class="custom-file-input">
+                <span class="custom-file-control">Choose file</span>
+            </label>
+        </div>
+    </div>
+</body>
+</div>

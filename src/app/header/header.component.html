@@ -1,0 +1,30 @@
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>
+                    
+                    <a href="" class="title"><img src="assets/img/images.jpg" alt=""></a>
+                
+                </h1>
+            </div> <!-- Login and Register -->
+            <div class="col-md-5" *ngIf="isAuthenticated()">
+                <button class="logout btn btn-default" (click)='logout()'>Log out</button>
+                <a href="/checkout" class="cart" *ngIf="storedcart">  <i class="fas fa-shopping-cart" style="font-size:24px">&#xf07a;</i>
+                    <span class='badge badge-danger' id='lblCartCount'> {{storedcart.length}} </span> </a>
+                <a routerLink="/restaurants" class="resturants nav-link">Resturants</a>
+                 <a routerLink="/offers" class="offers nav-link">Offers</a>
+                <a href="/profile" class="profile">Myprofile <i class="fas fa-user"></i></a>
+            </div>
+            <div class="col-md-5" *ngIf="!isAuthenticated()">
+                <a href="/checkout" class="cart" *ngIf="storedcart">  <i class="fas fa-shopping-cart" style="font-size:24px">&#xf07a;</i>
+                    <span class='badge badge-danger' id='lblCartCount'> {{storedcart.length}} </span> </a>
+                 <a routerLink="/Register" href="" class="signup nav-link">Sign Up</a>
+                 <a routerLink="/login"  class="login nav-link">Login</a>
+                 <a routerLink="/restaurants"  class="resturants nav-link">Resturants</a>
+                 <a routerLink="/offers"  class="offers nav-link">Offers</a>
+              
+            </div> <!-- Login and Register -->
+        </div>
+    </div>
+</div>

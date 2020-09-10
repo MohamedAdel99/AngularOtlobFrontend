@@ -1,0 +1,67 @@
+<div class="container justify-content-center">
+  <body class="text-center">
+    <form class="form-signup" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+      <hr>
+      <div class="form-group">
+        <label for="username" class="sr-only">Username</label>
+        <input type="text" id="username" name="username"  [formControlName]="'username'" class="form-control" placeholder="Username" [ngClass]="{ 'is-invalid': isSubmitted && formControls.username.errors }" required>
+
+              <div *ngIf=" formControls.username.errors && (formControls.username.dirty || formControls.username.touched)" class="alert alert-danger">
+                <div *ngIf="formControls.username.errors.required">Username required</div>
+            </div>
+
+      </div>
+      <div class="form-group">
+        <label for="inputEmail" class="sr-only">Email address</label>
+       <input type="text" id="inputEmail" [formControlName]="'email'" class="form-control" placeholder="Email *Email@example.com*" [ngClass]="{ 'is-invalid': isSubmitted && formControls.email.errors }" required>
+
+       <div *ngIf=" formControls.email.errors && (formControls.email.dirty || formControls.email.touched)" class="alert alert-danger">
+        <div *ngIf="formControls.email.errors.required">Email is required</div>
+        <div *ngIf="formControls.email.errors.email">Email must be a valid email address</div>
+    </div>
+
+      </div>
+      <div class="form-group">
+        <label for="inputPhone" class="sr-only">Phonenumber</label>
+        <input type="text" id="inputPhone" [formControlName]="'phonenum'"class="form-control" placeholder="Mobile Number *01xxx*" maxlength="11" [ngClass]="{ 'is-invalid': isSubmitted && formControls.phonenum.errors }" required>
+        
+        <div *ngIf=" formControls.phonenum.errors && (formControls.phonenum.dirty || formControls.phonenum.touched)" class="alert alert-danger">
+          <div *ngIf="formControls.phonenum.errors.required">Phonenumber required</div>
+          <div *ngIf="formControls.phonenum.errors.pattern">Phone must be number</div>
+          <div *ngIf="formControls.phonenum.errors.minlength && !formControls.phonenum.errors.pattern">Phonenumber too short</div>
+      </div>
+      
+      </div>
+      <div class="form-group">
+        <label for="inputAddress" class="sr-only">Address</label>
+        <input type="text" id="inputAddress" [formControlName]="'address'"class="form-control" placeholder="Full Address" [ngClass]="{ 'is-invalid': isSubmitted && formControls.address.errors }"required>
+
+          <div *ngIf=" formControls.address.errors && (formControls.address.dirty || formControls.address.touched)" class="alert alert-danger">
+            <div *ngIf="formControls.address.errors.required">address required</div>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" [formControlName]="'password'" class="form-control" autocomplete="on" placeholder="Password min 6 characters" [ngClass]="{ 'is-invalid': isSubmitted && formControls.password.errors }"required>
+
+        <div *ngIf=" formControls.password.errors && (formControls.password.dirty || formControls.password.touched)" class="alert alert-danger">
+          <div *ngIf="formControls.password.errors.required">Password is required</div>
+          <div *ngIf="formControls.password.errors.minlength">Password must be at least 6 characters</div>
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="inputConfirmPassword" class="sr-only">Password</label>
+        <input type="password" id="inputConfirmPassword" [formControlName]="'confirmPassword'" class="form-control" autocomplete="on" placeholder="Confirm Password" [ngClass]="{ 'is-invalid': isSubmitted && formControls.confirmPassword.errors }"required>
+
+              <div *ngIf=" formControls.confirmPassword.errors && (formControls.confirmPassword.dirty || formControls.confirmPassword.touched)" class="alert alert-danger">
+                <div *ngIf="formControls.confirmPassword.errors.required">Confirm Password is required</div>
+                <div *ngIf="formControls.confirmPassword.errors.mustMatch">Passwords don't match</div>
+            </div>
+
+      </div>
+      <button class="btn btn-lg btn-success btn-block" type="submit">Sign up</button>
+    </form>
+    </body>
+  </div>

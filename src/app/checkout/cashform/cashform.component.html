@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-8 my-2"> 
+<h3><img src="https://image.flaticon.com/icons/png/512/1554/1554401.png" height="50" width="50" alt=""> Cash On Delivery</h3>
+<li class="list-group-item d-flex justify-content-between lh-condensed">
+<h6>Username : </h6>
+<span>{{user.username}}</span>
+</li>
+<li class="list-group-item d-flex justify-content-between lh-condensed">
+<h6>Delivery Address : </h6>
+<span>{{user.address}}</span>
+</li>
+
+<li class="list-group-item d-flex justify-content-between lh-condensed">
+    <h6>Restaurant : </h6>
+    <span>{{rest}}</span>
+    </li>
+
+<li class="list-group-item d-flex justify-content-between lh-condensed">
+<h6>Phone :</h6>
+<span>{{user.phoneNum}}</span>
+</li>
+
+<li class="list-group-item d-flex justify-content-between lh-condensed">
+<h6>OrderDetails : </h6>
+<span>details</span>
+</li>
+
+<input id="exchageRateDate" type="text" class="form-control" placeholder="Extra Order Note" required="" autofocus=""/>
+        <hr>  
+         <ul class="list-group mb-3" >          
+                <li class="list-group-item d-flex justify-content-between active"> 
+                    <span>Delivery Fee </span>
+                    <strong>10 EGP</strong>
+                    </li>    
+                <li class="list-group-item d-flex justify-content-between active"> 
+                <span>Total</span>
+                <strong>{{total+10}} EGP</strong>
+                </li>
+            </ul>    
+<hr>
+<div class="row">
+    <div class="col">
+<button class="btn btn-md btn-success btn-block" (click)="myFunc()" formtarget="_blank">Place Order</button>
+</div>
+<div class="col">
+    <button class="btn btn-md btn-success btn-block" (click)="cancel()" >Cancel</button>
+    </div>
+</div>
+</div> 
+</div>

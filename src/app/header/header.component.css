@@ -1,0 +1,17 @@
+.header{
+   
+    background: rgb(252,222,4);
+    box-shadow: 0 0px 4px #6b6b6b;
+  }
+  .title{  
+    color: rgb(131, 37, 107);
+    text-decoration: none;
+  }
+  .login,.resturants,.signup,.offers,.logout,.cart,.profile{
+    float: right;
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(53, 10, 40);
+    padding-top: 25px;
+  }
+  
