@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   registerPayload: RegisterPayload;
   isSubmitted  =  false;
+  showErrorMessage = false;
   constructor(private formBuilder: FormBuilder,private authService: AuthService,private router:Router) { 
     this.registerPayload = {
       username: '',
@@ -57,6 +58,7 @@ export class RegisterComponent implements OnInit {
       this.router.navigateByUrl('/register-success');
     }, error => {
       console.log('register failed');
+      this.showErrorMessage = true;
     });
   }
   }

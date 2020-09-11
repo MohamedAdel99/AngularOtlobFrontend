@@ -61,6 +61,9 @@
             </div>
 
       </div>
+      <div *ngIf="isSubmitted && showErrorMessage" class="alert alert-danger">
+         Register Error or Username is used
+      </div>
       <button class="btn btn-lg btn-success btn-block" type="submit">Sign up</button>
     </form>
     </body>
